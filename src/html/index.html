@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../style/output.css" />
+  </head>
+  <body>
+    <header class="my-8 text-center">
+      <h1 class="text-3xl font-bold">
+        Sample Code for JavaScript Practice 003
+      </h1>
+    </header>
+
+    <!-- add task form -->
+    <form class="max-w-xl mx-auto" id="formSubmit">
+      <!-- task name -->
+      <div class="mb-5">
+        <label
+          for="taskName"
+          class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+          >Task Name</label
+        >
+        <input
+          type="text"
+          id="taskName"
+          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          placeholder="HRD Homework"
+        />
+
+        <!-- display error message when task name input is empty -->
+        <p id="taskNameError" class="text-red-600 mt-1"></p>
+      </div>
+
+      <!-- select deadline for your task -->
+      <div class="mb-5">
+        <label
+          for="dueDate"
+          class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+          >Due Date</label
+        >
+
+        <div class="relative max-w-xl">
+          <div
+            class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
+          >
+            <svg
+              class="w-4 h-4 text-gray-500 dark:text-gray-400"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"
+              />
+            </svg>
+          </div>
+          <input
+            datepicker
+            id="dueDate"
+            type="text"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            placeholder="Select date"
+          />
+        </div>
+
+        <!-- display error message when due date is lower than the current date and when it's empty -->
+        <p id="dueDateError" class="text-red-600 mt-1"></p>
+      </div>
+
+      <!-- select priority -->
+      <div class="mb-5">
+        <label
+          for="priority"
+          class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+          >Select an option</label
+        >
+        <select
+          id="priority"
+          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        >
+          <option selected hidden value="">Select your riority</option>
+          <option value="high">High</option>
+          <option value="medium">Medium</option>
+          <option value="low">Low</option>
+        </select>
+
+        <!-- display error message when select priority is empty -->
+        <p id="priorityError" class="text-red-600 mt-1"></p>
+      </div>
+
+      <button
+        type="submit"
+        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+      >
+        Add New Task
+      </button>
+    </form>
+
+    <!-- show all task table -->
+    <section class="mt-12 max-w-7xl mx-auto space-y-4">
+      <h2 class="text-2xl font-bold">Show All Tasks</h2>
+      <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+        <table
+          class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400"
+        >
+          <thead
+            class="text-xs text-gray-700 uppercase bg-gray-100 dark:bg-gray-700 dark:text-gray-400"
+          >
+            <tr>
+              <th scope="col" class="px-6 py-3">task id</th>
+              <th scope="col" class="px-6 py-3">task name</th>
+              <th scope="col" class="px-6 py-3">due date</th>
+              <th scope="col" class="px-6 py-3">priority</th>
+              <th scope="col" class="px-6 py-3">status</th>
+            </tr>
+          </thead>
+          <tbody id="taskListBody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- link flowbite script and javascript -->
+    <script src="../javascript/script.js"></script>
+    <script src="../../node_modules/flowbite/dist/flowbite.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "dev": "npx @tailwindcss/cli -i ./src/style/input.css -o ./src/style/output.css --watch"
+  },
+  "dependencies": {
+    "@tailwindcss/cli": "^4.0.7",
+    "flowbite": "^3.1.2",
+    "tailwindcss": "^4.0.7"
+  }
+}
