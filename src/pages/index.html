@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../styles/output.css" />
+  </head>
+  <body
+    class="font-plus-jakarta-sans my-16 space-y-8 mx-auto container"
+  >
+    <!-- header -->
+    <header class="text-center">
+      <h1 class="text-4xl font-bold">Quotes List</h1>
+    </header>
+
+    <!-- form -->
+    <form class="flex w-full gap-10 items-start" id="form">
+      <!-- select option - quote id and title -->
+
+      <select
+        id="quote-option"
+        class="w-64 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+      >
+        <option selected value="">Choose an option</option>
+        <option value="id">Quote's ID</option>
+        <option value="title">Quote's Title</option>
+      </select>
+
+      <div class="w-full">
+        <!-- search quote input -->
+        <input
+          type="text"
+          id="quote-search"
+          class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          placeholder="Stay positive, work hard, make it happen"
+          disabled
+        />
+
+        <!-- display error message when there is no result found. -->
+        <p id="error-message" class="text-red-600 mt-3"></p>
+      </div>
+
+      <!-- search button -->
+      <button
+        type="submit"
+        class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-7 py-2.5 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
+      >
+        Search
+      </button>
+    </form>
+
+    <!-- show result based on search condition -->
+    <section class="mt-24">
+      <h1 class="text-2xl font-bold mb-8">Quote Search Result</h1>
+
+      <!-- display result - image, quote title, and description -->
+      <div class="flex gap-14">
+        <img id="quote-image" class="w-1/4 rounded-xl" />
+        <div>
+          <h2 id="quote-title" class="text-2xl font-bold"></h2>
+          <p id="quote-description"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- link js script -->
+    <script src="../scripts/script.js"></script>
+  </body>
+</html>
